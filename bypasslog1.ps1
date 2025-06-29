@@ -34,4 +34,4 @@ foreach ($file in $sourceFiles) {
     }
 }
 
-Write-Host "`n[✓] Script completed by Akshit Paul — Coders Corporation discor.gg/hindustan"
+Write-Host "`n[✓] Script completed by GOD AKSHIT | Coders Corporation- discord.gg/hindustan"
