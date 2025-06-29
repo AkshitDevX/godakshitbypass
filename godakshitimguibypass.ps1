@@ -1,3 +1,11 @@
+Write-Host "=========================" -ForegroundColor Cyan
+Write-Host "      CODERS CORPORATION      " -ForegroundColor Yellow
+Write-Host "=========================" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "credit - GOD AKSHIT" -ForegroundColor DarkGray
+Write-Host "discord: https://discord.gg/hindustan" -ForegroundColor DarkCyan
+Write-Host ""
+
 $oldName = "imgui.ini"
 $newName = "~DF70B737FA89A042D22.TMP"
 
