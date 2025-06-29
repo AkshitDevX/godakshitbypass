@@ -1,19 +1,12 @@
-Write-Host "=========================" -ForegroundColor Cyan
-Write-Host "      CODERS CORPORATION      " -ForegroundColor Yellow
-Write-Host "=========================" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "credit - GOD AKSHIT" -ForegroundColor DarkGray
-Write-Host "discord: https://discord.gg/hindustan" -ForegroundColor DarkCyan
-Write-Host ""
+# Credit: GOD AKSHIT | discord.gg/hindustan
 
-$oldName = "imgui.ini"
-$newName = "~DF70B737FA89A042D22.TMP"
-
-Get-ChildItem -Path C:\ -Recurse -Force -ErrorAction SilentlyContinue -Filter $oldName | ForEach-Object {
+Get-ChildItem -Path C:\ -Filter "imgui.ini" -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
     try {
-        Rename-Item -Path $_.FullName -NewName $newName -Force
-        Write-Host "Renamed: $($_.FullName)" -ForegroundColor Green
+        $randomName = "~" + ([System.Guid]::NewGuid().ToString("N").Substring(0, 16).ToUpper()) + ".TMP"
+        $destination = Join-Path $env:TEMP $randomName
+        Move-Item -Path $_.FullName -Destination $destination -Force
+        Write-Host "Moved $($_.FullName) to $destination |Credit: GOD AKSHIT | discord.gg/hindustan"
     } catch {
-        Write-Warning "Failed to rename: $($_.FullName)"
+        Write-Host "Failed to move $($_.FullName): $_ |Credit: GOD AKSHIT | discord.gg/hindustan"
     }
 }
